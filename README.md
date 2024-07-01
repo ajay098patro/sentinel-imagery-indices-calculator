@@ -42,7 +42,7 @@ To run the software, execute the following command:
 
 python pro_1.py
 
-Follow the on-screen prompts to provide the directories for the satellite image bands (Red and NIR) and choose the index to calculate (NDVI or SAVI).
+Follow the on-screen prompts to provide the directories for the satellite image bands (Red and NIR) and choose the index to calculate (NDVI or SAVI or NDWI).
 
 ### Example
 
