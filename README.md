@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 Clone the repository and navigate into it:
 
-git clone https://github.com/your-username/sentinel-imagery-indices-calculator.git
+git clone https://github.com/ajay_patro/sentinel-imagery-indices-calculator.git
 cd sentinel-imagery-indices-calculator
 
 Install the required Python libraries:
