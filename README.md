@@ -1,82 +1,72 @@
 # Sentinel Imagery Indices Calculator
 
-Welcome to the Indices Calculator for Sentinel Imagery Satellite. This tool is designed to calculate the Normalized Difference Vegetation Index (NDVI) and Soil Adjusted Vegetation Index (SAVI) from Sentinel-2 satellite imagery. The software reads satellite image bands, performs the calculations, and visualizes the results.
+Welcome to the Sentinel Imagery Indices Calculator! This tool is designed to calculate two key vegetation indices, the Normalized Difference Vegetation Index (NDVI) and the Soil Adjusted Vegetation Index (SAVI), from Sentinel-2 satellite imagery. It reads satellite image bands, performs the calculations, and provides visualizations of the results.
 
 ## Features
 
-- Calculate NDVI from Sentinel-2 imagery
-- Calculate SAVI from Sentinel-2 imagery
-- Visualize the indices with a north arrow added to the plots
+- Calculate NDVI from Sentinel-2 satellite imagery
+- Calculate SAVI from Sentinel-2 satellite imagery
+- Visualize the calculated indices with a north arrow added to the plots
 
 ## Dependencies
 
-This software requires the following Python libraries:
+This software relies on the following Python libraries, which can be installed using `pip` and the provided `requirements.txt` file:
 
-- `numpy` for numerical calculations
-- `matplotlib` for visualization
-- `rasterio` for reading satellite images
+- `numpy` for efficient numerical operations
+- `matplotlib` for visualizing the calculated indices
+- `rasterio` for reading and manipulating satellite image data
 
-You can install the dependencies using the provided `requirements.txt` file:
+To install the dependencies, use the command:
 
-```sh
-  pip install -r requirements.txt
+pip install -r requirements.txt
 
+## Usage
 
-Usage
+### Installation
 
-    Clone the repository:
+Clone the repository and navigate into it:
 
-```sh
-    git clone https://github.com/your-username/sentinel-imagery-indices-calculator.git
-    cd sentinel-imagery-indices-calculator
+git clone https://github.com/your-username/sentinel-imagery-indices-calculator.git
+cd sentinel-imagery-indices-calculator
 
-Install the required dependencies:
+Install the required Python libraries:
 
-```sh
+pip install -r requirements.txt
 
-    pip install -r requirements.txt
+### Running the Software
 
-Run the software:
+To run the software, execute the following command:
 
-```sh
+python pro_1.py
 
-    python pro_1.py
+Follow the on-screen prompts to provide the directories for the satellite image bands (Red and NIR) and choose the index to calculate (NDVI or SAVI).
 
-    Follow the on-screen prompts to provide the directories for the satellite image bands (Red and NIR) and choose the index to calculate (NDVI or SAVI).
+### Example
 
-Example
+Here's an example run of the software:
 
-An example run of the software:
+1. Provide the directory for the Red (B04) band:
+   Provide Band Red (B04) Directory: path/to/red_band.jp2
 
-    Provide the directory for the Red (B04) band:
+2. Provide the directory for the NIR (B08) band:
+   Provide Band NIR (B08) Directory: path/to/nir_band.jp2
 
-    mathematica
+3. Choose the index to calculate (NDVI or SAVI):
+   What would you like to do with the image (NDVI - SAVI)? Choose (1/2) respectively: 1
 
-Provide Band Red (B04) Directory: path/to/red_band.jp2
+The software will display the calculated index with a north arrow on the plot.
 
-Provide the directory for the NIR (B08) band:
+## Contributing
 
-mathematica
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
 
-Provide Band NIR (B08) Directory: path/to/nir_band.jp2
-
-Choose the index to calculate (NDVI or SAVI):
-
-vbnet
-
-    What would you like to do with the image (NDVI - SAVI)? Choose (1/2) respectively: 1
-
-The software will then display the calculated index.
-
-Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-Author
+## Author
 
 Your Name - Your GitHub Profile
-Acknowledgments
 
-    Sentinel-2 for providing the satellite imagery
-    numpy
-    matplotlib
-    rasterio
+## Acknowledgments
+
+- **Sentinel-2**: Providing the satellite imagery used in this project
+- **numpy**: Efficient numerical operations in Python
+- **matplotlib**: Visualization library for Python
+- **rasterio**: Python library for reading and writing raster data formats
