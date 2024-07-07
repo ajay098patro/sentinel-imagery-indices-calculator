@@ -26,9 +26,9 @@ def calculate_ndwi(image):
 def load_demo_image():
     """Load demo imagery bands and stack them into a single numpy array."""
     band_files = [
-        "/File_path/Band_B04.jp2",
-        "/File_path/Band_B08.jp2",
-        "/File_path/Band_B03.jp2",
+                "/media/ajay/main/Harvard's CS50p/final_pro/B03.tif",
+                "/media/ajay/main/Harvard's CS50p/final_pro/B04.tif",
+                "/media/ajay/main/Harvard's CS50p/final_pro/B08.tif"
     ]
     bands = [rasterio.open(file).read(1) for file in band_files]
     image = np.dstack(bands)
