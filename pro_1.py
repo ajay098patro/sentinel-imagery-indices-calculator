@@ -48,6 +48,22 @@ def plot_index(index, title):
     ax.set_title(title)
     plt.show()
 
+def plot_fcc(image):
+    """Plot False Color Composite (FCC) image."""
+    def normalize(array):
+        array_min, array_max = array.min(), array.max()
+        return (array - array_min) / (array_max - array_min)
+
+    fcc_image = np.zeros((image.shape[0], image.shape[1], 3), dtype=np.float32)
+    fcc_image[:, :, 0] = normalize(image[:, :, 2])  # NIR band
+    fcc_image[:, :, 1] = normalize(image[:, :, 1])  # Red band
+    fcc_image[:, :, 2] = normalize(image[:, :, 0])  # Green band
+
+    fig, ax = plt.subplots(figsize=(10, 10))
+    ax.imshow(fcc_image)
+    ax.set_title('False Color Composite (B8, B4, B3)')
+    plt.show()
+
 def main():
     print("Welcome to the Indices Calculator for Sentinel Imagery Satellite.")
     print("This tool calculates NDVI, SAVI, and NDWI from Sentinel-2 imagery.")
@@ -74,13 +90,15 @@ def main():
                     print("Invalid option.")
             elif option == "2":
                 img = load_demo_image()
-                operation = input('What would you like to do with the image (NDVI - SAVI - NDWI)? Choose (1/2/3) respectively: ')
+                operation = input('What would you like to do with the image (NDVI - SAVI - NDWI - FCC <False Color Composite>)? Choose (1/2/3/4) respectively: ')
                 if operation == "1":
                     plot_index(calculate_ndvi(img), "NDVI")
                 elif operation == "2":
                     plot_index(calculate_savi(img), "SAVI")
                 elif operation == "3":
                     plot_index(calculate_ndwi(img), "NDWI")
+                elif operation == "4":
+                    plot_fcc(img)
                 else:
                     print("Invalid option.")
             else:
